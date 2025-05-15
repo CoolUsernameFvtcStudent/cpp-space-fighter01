@@ -6,6 +6,9 @@
 
 std::vector<Explosion *> Level::s_explosions;
 
+//useing static:
+int Level::m_score = 0;
+
 
 // Collision Callback Functions
 
@@ -94,6 +97,7 @@ void Level::LoadContent(ResourceManager& resourceManager)
 	Explosion* pExplosion;
 	//load font
 	pFont = resourceManager.Load<Font>("Fonts\\Ethnocentric.ttf", false);
+	Level::Score();
 	//
 	if (s_explosions.size() == 0) {
 		AudioSample* pExplosionSound = resourceManager.Load<AudioSample>("Audio\\Effects\\Explosion.ogg");
@@ -261,3 +265,7 @@ void Level::Draw(SpriteBatch& spriteBatch)
 	spriteBatch.End();
 }
 
+
+void Level::Score() { m_score = 0; }
+
+void Level::Score(int counter) { m_score = m_score + counter; }

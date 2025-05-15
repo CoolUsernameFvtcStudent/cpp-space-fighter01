@@ -1,4 +1,4 @@
-#include "Level.h"
+
 #include "EnemyShip.h"
 
 
@@ -43,10 +43,4 @@ void EnemyShip::Initialize(const Vector2 position, const double delaySeconds)
 void EnemyShip::Hit(const float damage)
 {
 	Ship::Hit(damage);
-	if (!IsActive())
-	{
-		//Score Up By One
-	//Level::Score(1);
-		GetCurrentLevel()->ChangeScoreAmount(1);
-		}
 }

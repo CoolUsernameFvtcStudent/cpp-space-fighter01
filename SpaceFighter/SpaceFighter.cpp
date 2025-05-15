@@ -4,6 +4,7 @@
 #include "MainMenuScreen.h"
 #include "Projectile.h"
 #include "Explosion.h"
+#include "Level.h"
 
 using namespace KatanaEngine;
 

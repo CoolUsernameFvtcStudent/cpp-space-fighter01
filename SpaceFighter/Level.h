@@ -70,6 +70,11 @@ public:
 		@return True if the screen is transitioning. */
 	virtual bool IsScreenTransitioning() const { return GetAlpha() < 1; }
 
+	/** @brief Change the Score
+		@param Change it by the number inputed (if none, reset) */
+	virtual void ChangeScoreAmount(int counter) { m_score += counter; }
+	//virtual void Score();
+
 	/** @brief Get a pointer to the closest object of a specific type.
 		@param position The position to check from.
 		@param range The maximum range to check.
@@ -164,4 +169,7 @@ private:
 
 	virtual std::vector<GameObject*>* GetSectors() { return m_pSectors; }
 
+	Font* pFont = nullptr;
+
+	int m_score = 0;
 };
